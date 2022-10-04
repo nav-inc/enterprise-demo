@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "postinstall": "concurrently \"npm:install-*\"",
+    "install-backend": "cd ./backend && npm i",
+    "install-frontend": "cd ./frontend && npm i",
+    "dev": "concurrently \"npm:dev-*\"",
+    "dev-backend": "cd ./backend && npm run dev",
+    "dev-frontend": "cd ./frontend && npm run dev",
+    "start": "npm run build-frontend && npm run start-backend",
+    "build-frontend": "cd ./frontend && npm run build",
+    "start-backend": "cd ./backend && npm run start"
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
+  }
+}
